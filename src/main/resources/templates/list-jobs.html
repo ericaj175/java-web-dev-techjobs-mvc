@@ -12,11 +12,38 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
 
-    <ol>
-        <li th:each="list-jobs : ${list-jobs}" th:text="VIEW ALL"></li>
-    </ol>
 
 
+    <body>
+
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID:</th>
+            <th>Name:</th>
+            <th>Employer:</th>
+            <th>Location:</th>
+            <th>Position Type:</th>
+            <th>Skill</th>
+        </tr>
+        </thead>
+
+        <tr th:each="flower, state : ${flowers}">
+            <td th:utext="${state.index}">ID</td>
+            <td th:utext="${state.count}">Name:</td>
+            <td th:utext="${state.size}">Employer:</td>
+            <td th:utext="${state.even}">Location:</td>
+            <td th:utext="${state.odd}">Position Type:</td>
+            <td th:utext="${state.first}">Skill</td>
+
+
+            <td th:utext="${flower}">Flower Name</td>
+        </tr>
+
+    </table>
+
+    </body>
     <!-- TODO #1 - Use a loop to display job results in a table. -->
 </div>
 

@@ -20,7 +20,6 @@ public class ListController {
 
     static HashMap<String, String> columnChoices = new HashMap<>();
     static HashMap<String, Object> tableChoices = new HashMap<>();
-    //static HashMap<String, Object> viewAllJobs = new HashMap<>();
 
     public ListController () {
         columnChoices.put("all", "All");
@@ -29,19 +28,19 @@ public class ListController {
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("coreCompetency", "Skill");
 
-
+        //tableChoices.put("All", JobData.findAll());
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
         tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
-       //tableChoices.put("View All", JobData.findAll ());
+        //
     }
 
     @RequestMapping(value = "")
     public String list(Model model) {
         model.addAttribute("columns", columnChoices);
         model.addAttribute("tableChoices", tableChoices);
-       // model.addAttribute("View All", JobData.findAll ());
+       //model.addAttribute("ViewAll", JobData.findAll());
             model.addAttribute("employers", JobData.getAllEmployers());
         model.addAttribute("locations", JobData.getAllLocations());
         model.addAttribute("positions", JobData.getAllPositionTypes());
