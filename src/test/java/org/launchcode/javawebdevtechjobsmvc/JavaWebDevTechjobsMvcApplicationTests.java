@@ -1,6 +1,7 @@
 package org.launchcode.javawebdevtechjobsmvc;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.testng.annotations.AfterTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
