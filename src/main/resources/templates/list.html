@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
@@ -18,10 +19,10 @@
         </th:block>
     </tr>
     <tr>
+        
         <!-- TODO #2: Complete the View Jobs By Category Table. -->
-
        <!-- Feel free to remove or modify this element if necessary. -->
-        <td><a th:href="@{/job_data.csv}" th:text="ViewAll"></a></td>
+
         <td th:each="category : ${tableChoices}">
             <ul>
                 <li th:each="item : ${category.value}">
@@ -30,6 +31,7 @@
             </ul>
         </td>
     </tr>
+    
 </table>
 
 </body>
