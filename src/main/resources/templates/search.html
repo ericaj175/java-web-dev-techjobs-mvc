@@ -6,8 +6,11 @@
 <div th:replace="fragments :: page-header"></div>
 <div class="container body-content">
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
     <form th:action="@{/search/results}" method = "post">
+
         <h2>Search by:</h2>
+
         <p>
             <span th:each="column : ${columns}">
                 <input
@@ -17,16 +20,35 @@
                         th:value="${column.key}"
                         th:checked="${column.key == 'all'}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
+
             </span>
         </p>
         <p>
             <label for="searchTerm">Keyword:</label>
-            <input type="text" name="searchTerm" id="searchTerm" />
+            <input type="text" name="searchTerm" id="searchTerm"/>
+
         </p>
-        <input type="submit" value="Search" />
+        <input type="submit" value="Search">
     </form>
-    <hr />
+    <hr/>
+    <table class="table table-striped job-listing">
+        <th:block th:each="job : ${jobs}">
+            <tr>
+                <td>
+                    <p>ID: <span th:text="${job.id}"></span></p>
+                    <p>Name: <span th:text="${job.name}"></span></p>
+                    <p>Employer: <span th:text="${job.employer}"></span></p>
+                    <p>Location: <span th:text="${job.location}"></span></p>
+                    <p>Skill: <span th:text="${job.coreCompetency}"></span></p>
+                </td>
+            </tr>
+
+        </th:block>
+
+    </table>
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
+
 </div>
+
 </body>
 </html>
