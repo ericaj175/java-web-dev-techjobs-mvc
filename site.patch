@@ -1,0 +1,15 @@
+Index: src/main/resources/templates/search.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/templates/search.html	(revision 378a1d0d2ee7be1a2d050dc5409ff16545b8de43)
++++ src/main/resources/templates/search.html	(date 1592933543083)
+@@ -28,7 +28,6 @@
+             <input type="text" name="searchTerm" id="searchTerm"/>
+ 
+         </p>
+-
+         <input type="submit" value="Search">
+     </form>
+     <hr/>

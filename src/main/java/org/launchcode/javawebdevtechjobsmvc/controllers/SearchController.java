@@ -21,10 +21,12 @@ public class SearchController {
         model.addAttribute("columns", columnChoices);
         return "search";
 }
-
+//anytime we post /search/results this controller handles that
+//model is channel in between controller-view. its the data
     @PostMapping(value ="results")
-    public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
 
+    public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
+        model.addAttribute("columns", columnChoices);
        ArrayList<Job> jobs;
         if (searchType.toLowerCase().equals("all") || searchType.equals ("")){
           jobs = JobData.findAll();
